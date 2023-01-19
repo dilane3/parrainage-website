@@ -41,8 +41,8 @@ export default function Home() {
 
         <section className={styles.center}>
           <div className={styles.title}>
-            <p className={nunito.className}>WELCOME TO THE CEREMONY OF</p>
-            <p className={nunito.className}>PARRAINAGE</p>
+            <p className={nunito.className}>WELCOME TO THE</p>
+            <p className={nunito.className}>SPONSORSHIP CEREMONY</p>
           </div>
 
           <div className={styles.info}>
