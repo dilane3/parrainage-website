@@ -3,8 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 6rem 6rem 2rem 6rem;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .description {
@@ -73,12 +74,14 @@
 }
 
 .center {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .center > .title {
@@ -91,6 +94,7 @@
 .center > .title > p {
   font-size: 50px;
   font-family: "Nunito Black";
+  text-align: center;
 }
 
 .center > div.title > p:first-child {
@@ -117,6 +121,46 @@
   text-align: center;
   font-family: "Nunito Regular";
   color: #333;
+}
+
+.image1 {
+  position: absolute;
+  transform: rotateZ(-10deg);
+  opacity: 0.8;
+}
+
+.image2 {
+  position: absolute;
+  transform: rotateZ(20deg);
+  opacity: 0.8;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 800px;
+  min-width: 800px;
+}
+
+.button {
+  min-width: 150px;
+  padding: 15px 50px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: #fff;
+  font-family: "Nunito Bold";
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button:hover {
+  background-color: var(--primary-light);
 }
 
 .logo,

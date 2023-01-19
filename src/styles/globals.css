@@ -60,6 +60,7 @@
   --card-border-rgb: 131, 134, 135;
 
   --primary: #3e4bff;
+  --primary-light: #919cfd;
   --black: rgb(43, 38, 56);
 }
 
@@ -116,6 +117,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  overflow: hidden;
 }
 
 a {
