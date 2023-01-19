@@ -78,21 +78,28 @@
   align-items: center;
   position: relative;
   padding: 4rem 0;
+  flex-direction: column;
 }
 
-.center::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
+.center > .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
+.center > .title > p {
+  font-size: 50px;
+  font-family: "Nunito Black";
+}
+
+.center > div.title > p:first-child {
+  font-size: 50px;
+  color: var(--black);
+}
+
+.center > div.title > p:last-child {
+  color: var(--primary);
 }
 
 .center::before,
@@ -102,6 +109,14 @@
   position: absolute;
   filter: blur(45px);
   transform: translateZ(0);
+}
+
+.info {
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  font-family: "Nunito Regular";
+  color: #333;
 }
 
 .logo,

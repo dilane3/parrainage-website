@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "Nunito Bold";
+  src: url("../../public/fonts/Nunito-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Nunito Black";
+  src: url("../../public/fonts/Nunito-Black.ttf");
+}
+
+@font-face {
+  font-family: "Nunito Light";
+  src: url("../../public/fonts/Nunito-Light.ttf");
+}
+
+@font-face {
+  font-family: "Nunito Regular";
+  src: url("../../public/fonts/Nunito-Regular.ttf");
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -38,6 +58,9 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  --primary: #3e4bff;
+  --black: rgb(43, 38, 56);
 }
 
 @media (prefers-color-scheme: dark) {
