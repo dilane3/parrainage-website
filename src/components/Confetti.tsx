@@ -4,10 +4,11 @@ import ReactConfetti from "react-confetti";
 import { useWindowSize } from "react-use";
 
 type ConfettiProps = {
-  action: string
+  action: string,
+  godSonNumber: number,
 }
 
-export const Confetti = ({ action }: ConfettiProps) => {
+export const Confetti = ({ action, godSonNumber }: ConfettiProps) => {
   const { width, height } = useWindowSize(1400, 1200);
 
   // State

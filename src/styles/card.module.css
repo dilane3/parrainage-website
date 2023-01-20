@@ -22,13 +22,13 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 100px;
-  width: 250px;
+  width: 260px;
   min-height: 100px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(68, 65, 65, 0.2);
   transition: all 0.3s ease-in-out;
-  padding: 20px;
+  padding: 10px;
 }
 
 .avatar {
@@ -55,7 +55,7 @@
 
 .godSonCard__name {
   text-align: left;
-  max-width: 130px;
+  max-width: 160px;
 }
 
 .godFatherCard__level,

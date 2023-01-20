@@ -9,78 +9,44 @@ import { generateColor, sleep } from "../../utils/index";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import DATA from "../../../public/data/data.json"
 import image from "/public/illustrations/good.png";
 
-const godFathers = [
-  {
-    id: 1,
-    name: "ARMEL DILANE KOMBOU M.",
-    level: "Master 1",
-    color: generateColor(),
-    godSons: [
-      {
-        id: 1,
-        name: "ALEX MARTIN MELINGA",
-        level: "Licence 1",
-        color: generateColor(),
-      },
-      {
-        id: 2,
-        name: "ROBIN DES BOIS",
-        level: "Licence 2",
-        color: generateColor(),
-      },
-      {
-        id: 3,
-        name: "REMI KAMGA",
-        level: "Licence 2",
-        color: generateColor(),
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "EDMOND GHISLAIN MAKOLLE",
-    level: "Master 1",
-    color: generateColor(),
-    godSons: [
-      {
-        id: 1,
-        name: "RAPHAEL KAMGA",
-        level: "Licence 1",
-        color: generateColor(),
-      },
-      {
-        id: 2,
-        name: "JUNIOR KELINGUE",
-        level: "Licence 2",
-        color: generateColor(),
-      },
-      {
-        id: 3,
-        name: "JULIEN KAMGA",
-        level: "Licence 2",
-        color: generateColor(),
-      },
-    ],
-  },
-];
+
+type GodFatherType = {
+  id: number;
+  name: string;
+  color: string;
+  godSons: {
+    id: number;
+    name: string;
+    color: string;
+  }[];
+}
 
 export default function Parrainage() {
   // State
   const [position, setPosition] = useState(0);
   const [action, setAction] = useState("show");
+  const [godFathers, setGodFathers] = useState<GodFatherType[]>([]);
 
   // UseEffect
   useEffect(() => {
-    (async () => {
-      setAction("show");
+    handleFormatData(DATA);
+  }, []);
 
-      await sleep(10000);
+  useEffect(() => {
+    if (position !== godFathers.length) {
+      (async () => {
+        setAction("show");
 
-      setAction("confetti");
-    })();
+        console.log(2300 * godFathers[position].godSons.length + 2000)
+  
+        await sleep(2300 * godFathers[position].godSons.length + 2000);
+  
+        setAction("confetti");
+      })();
+    }
   }, [position]);
 
   // Some handlers
@@ -88,11 +54,36 @@ export default function Parrainage() {
     setAction("hidden");
 
     (async () => {
-      await sleep(1500 * godFathers[position].godSons.length);
+      await sleep(5000);
 
       setPosition((prev) => prev + 1);
     })();
   };
+
+  const handleFormatData = (data: { godfather: string; godsons: string[] }[]) => {
+    const godFathers: GodFatherType[] = [];
+
+    data.forEach((godFather, index) => {
+      const godFatherData: GodFatherType = {
+        id: index + 1,
+        name: godFather["godfather"],
+        color: generateColor(),
+        godSons: [],
+      };
+
+      godFather.godsons.forEach((godSon, index) => {
+        godFatherData.godSons.push({
+          id: index + 1,
+          name: godSon,
+          color: generateColor(),
+        });
+      });
+
+      godFathers.push(godFatherData);
+    });
+
+    setGodFathers(godFathers);
+  }
 
   return (
     <>
@@ -111,9 +102,14 @@ export default function Parrainage() {
       <main className={styles.main}>
         <Header />
 
-        {position !== godFathers.length && <Confetti action={action} />}
+        {position !== godFathers.length && (
+          <Confetti
+            action={action}
+            godSonNumber={godFathers[position].godSons.length}
+          />
+        )}
 
-        {position !== godFathers.length ? (
+        {(position !== godFathers.length) ? (
           <section className={styles.sponsorshipSection}>
             <GodFatherCard data={godFathers[position]} action={action} />
 
@@ -161,10 +157,11 @@ export default function Parrainage() {
               />
             </motion.div>
 
-            <h1 className={styles.title}>Thank you for your participation</h1>
+            <h1 className={styles.title}>THANK YOU SO MUCH.</h1>
 
             <p className={styles.description}>
-              We will contact you as soon as possible
+              We are so happy to have you in this ceremony.
+              We will contact you as soon as possible.
             </p>
           </section>
         )}

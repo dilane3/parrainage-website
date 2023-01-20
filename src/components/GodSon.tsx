@@ -8,7 +8,6 @@ type GodSonCardProps = {
   data: {
     id: number;
     name: string;
-    level: string;
     color: string;
   },
   action: string;
@@ -44,26 +43,40 @@ export const GodSonCard = ({ index, data, action }: GodSonCardProps) => {
       case 0:
         return {
           left: 30,
-          bottom: 70,
+          bottom: 50,
         };
 
       case 1:
         return {
           right: 30,
-          bottom: 70,
+          bottom: 50,
         };
 
       case 2:
         return {
           left: 30,
-          bottom: 270,
+          bottom: 170,
         };
 
       case 3:
         return {
           right: 30,
-          bottom: 270,
+          bottom: 170,
         };
+
+      case 4: {
+        return {
+          left: 30,
+          bottom: 290,
+        };
+      }
+
+      case 5: {
+        return {
+          right: 30,
+          bottom: 290,
+        };
+      }
 
       default:
         return {
@@ -92,7 +105,7 @@ export const GodSonCard = ({ index, data, action }: GodSonCardProps) => {
 
       <div className={styles.godSonCard__info}>
         <p className={styles.godSonCard__name}>{ data.name.toUpperCase() }</p>
-        <p className={styles.godSonCard__level}>( { data.level.toUpperCase() } )</p>
+        {/* <p className={styles.godSonCard__level}>( { data.level.toUpperCase() } )</p> */}
       </div>
     </motion.div>
   );

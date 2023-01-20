@@ -7,7 +7,6 @@ type GodFatherCardProps = {
   data: {
     id: number;
     name: string;
-    level: string;
     color: string;
   };
   action: string;
@@ -52,9 +51,9 @@ export const GodFatherCard = ({ data, action }: GodFatherCardProps) => {
       </div>
 
       <p className={styles.godFatherCard__name}>{data.name.toUpperCase()}</p>
-      <p className={styles.godFatherCard__level}>
+      {/* <p className={styles.godFatherCard__level}>
         ( {data.level.toUpperCase()} )
-      </p>
+      </p> */}
     </motion.div>
   );
 };
