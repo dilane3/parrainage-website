@@ -5,7 +5,12 @@ export const Footer = () => {
     <footer className={styles.footer}>
       &copy; {new Date().getFullYear()} - Made with{" "}
       <span style={{ color: "red", margin: "0 5px" }}>❤️</span> by{" "}
-      <a href="https://dilane3.com" target="_blank" style={{ marginLeft: 7 }}>
+      <a
+        href="https://dilane3.com"
+        target="_blank"
+        style={{ marginLeft: 7 }}
+        rel="noreferrer"
+      >
         {" "}
         Dilane3
       </a>
