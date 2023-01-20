@@ -40,8 +40,6 @@ export default function Home() {
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
               totam voluptates cupiditate asperiores. Veritatis dicta voluptatum
-              totam iusto perspiciatis, repellendus cum et beatae eveniet
-              dignissimos necessitatibus odio est qui sunt adipisci asperiores
             </p>
           </div>
 
