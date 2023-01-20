@@ -6,6 +6,8 @@ import image1 from "/public/illustrations/graduation-hat.png";
 import image2 from "/public/illustrations/books-pile.png";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito({ subsets: ["latin"] });
@@ -26,18 +28,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <section className={styles.description}>
-          <p>University of Yaounde I</p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By Comsas
-            </a>
-          </div>
-        </section>
+        <Header />
 
         <section className={styles.center}>
           <div className={styles.title}>
@@ -60,10 +51,10 @@ export default function Home() {
               left: -100,
             }}
             initial={{
-              top: -100,
+              top: -70,
             }}
             animate={{
-              top: -50,
+              top: -20,
             }}
             transition={{
               duration: 2,
@@ -86,10 +77,10 @@ export default function Home() {
               right: 0,
             }}
             initial={{
-              top: -100,
+              top: -70,
             }}
             animate={{
-              top: -50,
+              top: -20,
             }}
             transition={{
               duration: 2,
@@ -112,6 +103,8 @@ export default function Home() {
             <button className={styles.button}>Start Attributions</button>
           </Link>
         </section>
+
+        <Footer />
       </main>
     </>
   );

@@ -1,0 +1,19 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.footer > a {
+  color: var(--primary);
+  text-decoration: none;
+  /* font-size: 18px; */
+  margin-right: 10px;
+  font-weight: bold;
+}

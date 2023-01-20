@@ -1,0 +1,74 @@
+/* God Father cards */
+
+.godFatherCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100px;
+  max-width: 200px;
+  min-height: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(68, 65, 65, 0.2);
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.godSonCard {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100px;
+  min-height: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(68, 65, 65, 0.2);
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Nunito Bold";
+}
+
+.godFatherCard__name,
+.godSonCard__name {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-family: "Nunito Bold";
+  text-align: center;
+  margin-top: 10px;
+}
+
+.godSonCard__name {
+  text-align: left;
+  max-width: 150px;
+}
+
+.godFatherCard__level,
+.godSonCard__level {
+  font-size: 14px;
+  font-family: "Nunito Regular";
+  text-align: center;
+  margin-top: 5px;
+}
+
+.godSonCard__level {
+  text-align: left;
+}
+
+.godSonCard__info {
+  margin-left: 20px;
+}

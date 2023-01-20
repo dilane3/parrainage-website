@@ -78,9 +78,9 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0 0 0;
+  padding: 2rem 0 0 0;
   flex-direction: column;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .center > .title {
@@ -138,7 +138,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0 20px;
   max-width: 800px;
   min-width: 800px;
 }
@@ -160,6 +160,18 @@
 
 .button:hover {
   background-color: var(--primary-light);
+}
+
+.sponsorshipSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  width: 100%;
+  height: calc(100vh - 220px);
+  margin-bottom: 20px;
 }
 
 .logo,
