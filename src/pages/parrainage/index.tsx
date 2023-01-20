@@ -47,7 +47,7 @@ export default function Parrainage() {
         setAction("confetti");
       })();
     }
-  }, [position]);
+  }, [position, godFathers]);
 
   // Some handlers
   const handleNext = () => {
