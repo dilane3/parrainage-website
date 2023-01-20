@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { GodFatherCard } from "@/components/GodFatherCard";
 import { GodSonCard } from "@/components/GodSon";
+import { Confetti } from "@/components/Confetti";
 
 export default function Parrainage() {
   return (
@@ -22,6 +23,8 @@ export default function Parrainage() {
       </Head>
       <main className={styles.main}>
         <Header />
+
+        <Confetti />
 
         <section className={styles.sponsorshipSection}>
           <GodFatherCard />
