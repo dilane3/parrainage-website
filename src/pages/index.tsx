@@ -38,8 +38,10 @@ export default function Home() {
 
           <div className={styles.info}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-              totam voluptates cupiditate asperiores. Veritatis dicta voluptatum
+              The Sponsorship Ceremony is an event that takes place every year.
+              The aim of this event is to welcome the new students of the
+              University of Yaounde I in the Computer Science Department and
+              give them the opportunity to meet their godfathers and godmothers.
             </p>
           </div>
 
