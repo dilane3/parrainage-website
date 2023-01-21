@@ -9,9 +9,8 @@ import { generateColor, sleep } from "../../utils/index";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import DATA from "../../../public/data/data.json"
+import DATA from "../../../public/data/data.json";
 import image from "/public/illustrations/good.png";
-
 
 type GodFatherType = {
   id: number;
@@ -22,7 +21,7 @@ type GodFatherType = {
     name: string;
     color: string;
   }[];
-}
+};
 
 export default function Parrainage() {
   // State
@@ -40,10 +39,10 @@ export default function Parrainage() {
       (async () => {
         setAction("show");
 
-        console.log(2300 * godFathers[position].godSons.length + 2000)
-  
+        console.log(2300 * godFathers[position].godSons.length + 2000);
+
         await sleep(2300 * godFathers[position].godSons.length + 2000);
-  
+
         setAction("confetti");
       })();
     }
@@ -60,7 +59,9 @@ export default function Parrainage() {
     })();
   };
 
-  const handleFormatData = (data: { godfather: string; godsons: string[] }[]) => {
+  const handleFormatData = (
+    data: { godfather: string; godsons: string[] }[]
+  ) => {
     const godFathers: GodFatherType[] = [];
 
     data.forEach((godFather, index) => {
@@ -83,7 +84,7 @@ export default function Parrainage() {
     });
 
     setGodFathers(godFathers);
-  }
+  };
 
   return (
     <>
@@ -109,7 +110,7 @@ export default function Parrainage() {
           />
         )}
 
-        {(position !== godFathers.length) ? (
+        {position !== godFathers.length ? (
           <section className={styles.sponsorshipSection}>
             <GodFatherCard data={godFathers[position]} action={action} />
 
@@ -128,7 +129,7 @@ export default function Parrainage() {
               </button>
             )}
           </section>
-        ) : (
+        ) : godFathers.length > 0 ? (
           <section className={styles.sponsorshipSection}>
             <motion.div
               style={{
@@ -160,11 +161,11 @@ export default function Parrainage() {
             <h1 className={styles.title}>THANK YOU SO MUCH.</h1>
 
             <p className={styles.description}>
-              We are so happy to have you in this ceremony.
-              We will contact you as soon as possible.
+              We are so happy to have you in this ceremony. We will contact you
+              as soon as possible.
             </p>
           </section>
-        )}
+        ) : null}
 
         <Footer />
       </main>
