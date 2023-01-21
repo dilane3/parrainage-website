@@ -1,12 +1,12 @@
 import { sleep } from "@/utils";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactConfetti from "react-confetti";
 import { useWindowSize } from "react-use";
 
 type ConfettiProps = {
-  action: string,
-  godSonNumber: number,
-}
+  action: string;
+  godSonNumber: number;
+};
 
 export const Confetti = ({ action, godSonNumber }: ConfettiProps) => {
   const { width, height } = useWindowSize(1400, 1200);
@@ -18,10 +18,12 @@ export const Confetti = ({ action, godSonNumber }: ConfettiProps) => {
     if (action === "confetti") {
       (async () => {
         setAnimating(true);
+
+        // Wait for 10 secs
         await sleep(10000);
 
         setAnimating(false);
-      })()
+      })();
     } else {
       setAnimating(false);
     }
